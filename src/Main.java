@@ -1,8 +1,11 @@
+import models.Cislo;
 import models.Kalkulacka;
+import models.Zlomek;
 
 import java.sql.SQLOutput;
 
 public class Main {
+
     public static void main(String[] args) {
         int c1 = 10;
         int c2 = 20;
@@ -35,6 +38,34 @@ public class Main {
             System.out.println("YES");
         }
 
+        Cislo cislo1 = new Cislo(15);
+        Cislo cislo2 = new Cislo(23.6f);
 
+        double soucetCisel = cislo1.getCislo() + cislo2.getCislo();
+        double soucetCisel2 = calc.Soucet(cislo1.getCislo(), cislo2.getCislo());
+        double soucetCisel3 = calc.Soucet(cislo1, cislo2);
+
+        Zlomek z1 = new Zlomek(5, 3);
+        Zlomek z2 = new Zlomek(8, 5);
+
+        System.out.println(z1);
+        System.out.println(z1.toString());
+
+        Zlomek z3 = new Zlomek(5, 3);
+        if (z1 != z3) {
+            System.out.println("Z1 != Z3");
+        }
+
+        if (z1.equals(z3))
+            System.out.println("Z1 equals Z3");
+
+        int modulo = 5 % 2;
+        System.out.println("modulo:" + modulo);
+
+        Cislo.vypisPocetHvezdicek(15);
+
+        System.out.println("z1 společný dělitel:" + Zlomek.NejvetsiSpolecnyDelitel(5, 3));
+
+        double soucet3 = calc.Soucet(z1, z2);
     }
 }
